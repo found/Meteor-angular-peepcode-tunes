@@ -1,9 +1,13 @@
 Albums = new Meteor.Collection("albums");
 Playlist = new Meteor.Collection("playlist");
 
-// Meteor.publish("albums", function() {
-// 	return Albums.find();
-// });
+Meteor.publish("albums", function() {
+	return Albums.find({});
+});
+
+Meteor.publish("playlist", function() {
+	return Playlist.find({});
+});
 // 
 // Meteor.publish("player", function() {
 // 	return Player.find({});
@@ -26,6 +30,10 @@ if (Meteor.isClient) {
 }
 
 if (Meteor.isServer) {
+	console.log("ALBUM COUNT");
+	console.log(Albums.find().count());
+	console.log("PLAYLIST COUNT");
+	console.log(Playlist.find().count());
 	console.log("SERVE");
   Meteor.startup(function () {
 	console.log("START");
@@ -99,17 +107,19 @@ if (Meteor.isServer) {
 		        "url": "music/slower.mp3"
 		    }]
 		}];
-		
-		for (var i = 0; i < data.length; i++) {
-			Albums.insert(data[i]);
-		}
+		console.log(data);
 		Playlist.insert({albums: []});
 		
+		
+		for (var i = 0; i < data.length; i++) {
+			console.log("FOR");
+			Albums.insert(data[i]);
+		}		
     // code to run on server at startup
   }
 });
 }
 
-Meteor.publish('albums', function () {
-  return Albums.find({});
-});
+// Meteor.publish('albums', function () {
+//   return Albums.find({});
+// });

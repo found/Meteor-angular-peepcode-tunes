@@ -8,7 +8,7 @@
       <button class="control next" ng-click="next()">Next</button>
     </nav>
     <ul class="albums">
-      <li class="album" ng-repeat="album in playlist"
+      <li class="album" ng-repeat="album in playlist.albums"
           ng-class="{current: player.current_album == $index}">
         <button class="queue remove" ng-click="pl.remove(album)"></button>
         <span class="album-title">{{album.title}}</span>
