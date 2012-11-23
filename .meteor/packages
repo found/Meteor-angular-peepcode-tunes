@@ -6,3 +6,5 @@
 insecure
 preserve-inputs
 angularjs
+accounts-password
+accounts-ui

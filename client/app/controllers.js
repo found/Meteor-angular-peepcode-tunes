@@ -19,6 +19,7 @@ function HomeCtrl($scope,$rootScope,$routeParams,$location,$timeout) {
 	};
 	
 	$scope.pl.add = function(album) {
+		console.log($scope.playlist.albums);
 		if ($scope.playlist.albums.indexOf(album) != -1) return;
 			$scope.playlist.albums.push(album);
 		$scope.playlist.$save();
