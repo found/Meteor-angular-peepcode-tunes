@@ -21,5 +21,4 @@ I do not use meteorite. (You can try it)
 
 3. Then clone this project and you should be able to do: /Users/me/meteor/meteor add angularjs (or whatever its cloned as in that directory).
 
-Hopefully that's the problem. If that is still giving you errors I will look more into it!
 
